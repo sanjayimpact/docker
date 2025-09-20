@@ -1,0 +1,20 @@
+docker build -t myreact-app .
+----here t for give a tag name to your docker image if you didnot give any name then it will take a default tag name of application name
+
+*** inside docker file in the root directory mention the expose port which is 80
+
+and now command for run 
+
+docker run -p 3000:80 your react app
+
+now here -p for expose the port inside the container to the  local machine here i expose the 3000 port  which is exposed inside the container with port 80
+
+
+/// here step to push it on the dockerhub
+docker tag my-react-app sanjubora84/myreact-app:v1
+
+here  after tag  (my-react-app) is the name of current application and sanjubora84 is the dockerhub name and myreact-app is the repo name and we have to give the tag name otherwise it will take a default one so v1 is the tag name
+
+//now push
+
+docker push sanjubora84/myreact-app:v1
